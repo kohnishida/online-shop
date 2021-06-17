@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item page</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div id="headerdiv">
+            <figure><a href="index.html"><img src="img/bear_logo.svg" alt="logo"></a></figure>
+            <ul>
+                <li><a href="">ALL</a></li>
+                <li><a href="#jackets">JACKETS</a></li>
+                <li><a href="#pants">PANTS</a></li>
+            </ul>
+        </div>
+        <!-- ここにハンバーガーメニュー -->
+        <div id="mask" class="hidden"></div>
+        <div id="burgericon">
+            <span class="material-icons" id="open">menu</span>
+        </div>
+        <nav id="hamburgermenu" class="hidden">
+            <ul>
+                <li><a href="#">ALL</a></li>
+                <li><a href="#jackets">JACKETS</a></li>
+                <li><a href="#pants">PANTS</a></li>
+                <li><a href="#">ABOUT US</a></li>
+                <li><a href="#">CONTACT US</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="item">
+        <section><img src="img/item.jpg" alt=""></section>
+        <section>
+            <h2>JACKETS</h2>
+            <p><span class="price">¥10,000</span></p>
+            <p class="border">ジャケットみたいなジャケット。ジャケットは、丈の短かい前開きのトップスの種類。屋内、屋外、インナーウェア、アウターウェアとして着用される、さまざまな衣服が含まれる。</p>
+            <section class="size">
+                <select>
+                    <option value>Select Size</option>
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+            </section>
+            <section id="form">
+                <section><input type="number" min="1" max="5" value="1"></section>
+                <section><input type="submit" value="ADD CART"></section>
+            </section>
+        </section>
+    </div>
+    <div class="sug">
+        <h2>You may also like...</h2>
+        <div>
+            <section><a href="#"><figure><img src="img/jackets_thumb.jpg" alt=""><figcaption>Pants<br>¥10,000</figcaption></figure></a></section>
+            <section><a href="#"><figure><img src="img/jackets_thumb.jpg" alt=""><figcaption>Pants<br>¥10,000</figcaption></figure></a></section>
+            <section><a href="#"><figure><img src="img/jackets_thumb.jpg" alt=""><figcaption>Pants<br>¥10,000</figcaption></figure></a></section>
+        </div>
+    </div>
+
+    <footer>
+        <figure><a href="index.html"><img src="img/bear_logo.svg" alt="logo"></a></figure>
+    </footer>
+    
+    <script src="js/main.js"></script>
+</body>
+</html>

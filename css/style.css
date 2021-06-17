@@ -1,0 +1,463 @@
+@charset "UTF-8";
+@import url('reset.css');
+
+body{
+    background: #fff;
+    color: #222;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+#headerdiv{
+    display: flex;
+    align-items: center;
+    margin: 20px 40px;
+}
+#headerdiv figure img{
+    width: 100px;
+    margin-right: 100px;
+}
+
+#headerdiv ul{
+    display: flex;
+}
+#headerdiv a{
+    color: #222;
+    text-decoration: none;
+    margin-right: 30px;
+    transition: opacity 0.4s;
+}
+#headerdiv a:hover{
+    opacity: 0.5;
+}
+.maincontainer{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+.mainmask{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: absolute;
+}
+.mainvisual{
+    width: 100%;
+    height: 100vh;
+    opacity: 0;
+    position: absolute;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: zoomIn 15s forwards infinite 0s;
+    z-index: 0;
+}
+.mainvisual:nth-child(1){
+    background-image: url('../img/23230036.jpg');
+}
+.mainvisual:nth-child(2){
+    background-image: url('../img/23230031.jpg');
+    animation-delay: 5s;
+}
+.mainvisual:nth-child(3){
+    background-image: url('../img/23230029.jpg');
+    animation-delay: 10s;
+}
+
+@keyframes zoomIn {
+    0%{
+        opacity: 0;
+    }
+    10%{
+        opacity: 1;
+    }
+    30%{
+        opacity: 1;
+    }
+    60%{
+        opacity: 0;
+        transform: scale(1.2);
+    } 
+    100% {
+        opacity: 0;
+    }
+}
+
+
+/* ハンバーガー */
+#burgericon{
+    text-align: right;
+    position: fixed;
+    top: 16px;
+    right: 50px;
+    z-index:4;
+}
+#burgericon #open{
+    font-size: 40px;
+    cursor: pointer;
+}
+#mask{
+    background: rgb(151, 151, 151);
+    opacity: 0.5;
+    width: 100vw;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    position: fixed;
+    transition: opacity 0.4s;
+    z-index: 3;
+}
+#mask.hidden{
+    opacity: 0;
+    display: none;
+}
+#hamburgermenu{
+    width: 300px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: #fff;
+    transition: transform 0.4s;
+    z-index: 4;
+}
+#hamburgermenu.hidden{
+    transform: translate(300px, 0);
+}
+#hamburgermenu ul{
+    text-align: center;
+    margin-top: 100px;   
+}
+#hamburgermenu ul li{
+    margin-bottom: 30px;
+}
+#hamburgermenu ul a{
+    color: #222;
+    text-decoration: none;
+    transition: opacity 0.4s;
+}
+#hamburgermenu ul a:hover{
+    opacity: 0.5;
+}
+#hamburgermenu ul li:nth-child(3){
+    margin-bottom: 50px;
+}
+#hamburgermenu ul li:nth-child(4){
+    padding-top: 50px;
+    border-top: 3px solid #555;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* main */
+main > .container{
+    max-width: 1000px;
+    margin: 60px auto;
+}
+main > .container div h2{
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+main > .container div .more{
+    text-align: center;
+    background: #222;
+    color: #fff;
+    width: 200px;
+    margin: 0 auto 80px;
+}
+main > .container div .more a{
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 30px 0;
+    transition: opacity 0.4s;
+}
+main > .container div .more a:hover{
+    opacity: 0.5;
+}
+main .container div section figure img{
+    width: 200px;
+    height: 200px;
+}
+main .container div section figure figcaption{
+    margin-top: 16px;
+}
+main .container figure span.gray{
+    color: #888;
+}
+main .container div section{
+    margin: 30px 0;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    line-height: 1.2;
+}
+main .container div section figure a{
+    text-decoration: none;
+    color: #222;
+    transition: opacity 0.4s;
+}
+main .container div section figure a:hover{
+    opacity: 0.5;
+    text-decoration: underline;
+}
+.bgDU{
+    position: relative;
+}
+.bgDU span.itemmask{
+    position: relative;
+    display: block;
+    line-height: 0;
+    overflow: hidden;
+}
+.bgDU span.itemmask::before{
+    content: "";
+    position: absolute;
+    z-index: 2;
+    opacity: 0;
+    left: 0;
+    top: 0;
+    transition: .3s;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/pants_thumb.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#pants .bgDU span.itemmask::before{
+    background-image: url(../img/jackets_thumb.jpg);
+}
+.bgDU:hover span.itemmask::before{
+    opacity: 1;
+}
+.bgDU span.cap{/*画像の上のテキスト*/
+	position: absolute;
+	transition: .4s ease-in-out;/*移り変わる速さを変更したい場合はこの数値を変更*/
+	z-index:3;/*テキストを前面に出す*/
+	bottom: 0;
+    right: -100px;
+	color: #333;/*テキストの色を変えたい場合はここを修正*/
+    background: #fff;
+    line-height: 1.5;/*行の高さを1.5にする*/
+}
+.bgDU:hover span.cap{
+    opacity: 1;
+    right: 0;
+}
+
+
+/* likeボタン */
+.like{
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.like [type="checkbox"]{
+    display: none;
+}
+.heart{
+    font-size: 30px;
+    color: #e4e4e4;
+    user-select: none;
+    margin: 10px;
+}
+.like [type="checkbox"]:checked ~ .heart{
+    animation-name: heart;
+    animation-duration: .6s;
+    animation-fill-mode: forwards;
+}
+@keyframes heart{
+    0%{
+        transform: scale(0);
+    }
+    50%{
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(1);
+        color: red;
+    }
+}
+.ripple{
+    position: absolute;
+    width: 44px;
+    height: 44px;
+    background: red;
+    border-radius: 50%;
+    transform: scale(0);
+}
+.like [type="checkbox"]:checked ~ .ripple{
+    animation-name: ripple;
+    animation-duration: .6s;
+    animation-fill-mode: forwards;
+}
+@keyframes ripple{
+    0%{
+        transform: scale(0);
+    }
+    50%{
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+
+/* フッター */
+footer{
+    background: #999;
+    height: 100px;
+    display: flex;
+    align-items: center;
+}
+footer img{
+    width: 100px;
+    padding: 20px 40px;
+}
+
+/* 商品ページ */
+.item section:first-child img{
+    max-width: 800px;
+    width: 100%;
+}
+div.item{
+    width: 1000px;
+    margin-bottom: 60px;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-between;
+}
+.item>section:first-child{
+    width: 55%;
+}
+.item>section:last-child{
+    width: 40%;
+}
+.item>section:last-child h2{
+    font-size: 36px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+.item>section:last-child span{
+    display: inline-block;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.item>section:last-child p.border{
+    font-size: 16px;
+    line-height: 1.5;
+    display: inline-block;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #999;
+}
+.size{
+    margin: 30px 0;
+}
+.size select{
+    width: 100%;
+    padding: 10px 10px;
+    border: 1px solid #b1b1b1;
+    cursor: pointer;
+}
+#form{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+#form section input{
+    width: 180px;
+    height: 40px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+#form input[type="number"]{
+    text-indent: 1rem;
+}
+#form input[type="submit"]{
+    border: none;
+    background: #222;
+    color: #fff;
+    font-weight: bold;
+}
+div.sug{
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 60px;
+    text-align: center;
+    border-top: #999 1px solid;
+}
+div.sug h2{
+    font-size: 28px;
+    font-weight: bold;
+}
+div.sug div{
+    margin-top: 40px;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+div.sug div img{
+    width: 300px;
+    height: auto;
+    transition: opacity 0.4s;
+}
+div.sug figcaption{
+    margin-top: 16px;
+}
+div.sug a{
+    color: #222;
+    text-decoration: none;
+}
+div.sug div img:hover{
+    opacity: 0.5;
+}
+div.sug a:hover{
+    text-decoration: underline;
+}
+
+
+
+@media (max-width: 900px){
+    main .container div section{
+        width: 80%;
+        margin: 30px auto;
+        flex-wrap: wrap;
+    }
+    main .container div section figure img{
+        width: 250px;
+        height: 250px;
+    }
+    .bgDU {
+        padding-bottom: 32px;
+    }
+    #headerdiv ul{
+        display: none;
+    }
+    
+}
+@media (max-width: 660px){
+    main .container div section{
+        width: 90%;
+    }
+    main .container div section figure img{
+        width: 200px;
+        height: 200px;
+    }
+@media (max-width: 400px){
+    main .container div section figure img{
+        width: 150px;
+        height: 150px;
+    }
+}
